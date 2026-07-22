@@ -1,0 +1,8 @@
+{
+  "enabledPlugins": {
+    "kio-plugins@kio-plugins": true,
+    "playwright@claude-plugins-official": true,
+    "superpowers@claude-plugins-official": true,
+    "kio-cli@kio-plugins": true
+  }
+}

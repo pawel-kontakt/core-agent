@@ -1,0 +1,4 @@
+.env*
+/curiosity-engine/role-backfill/hca_entities.parquet
+/curiosity-engine/role-backfill/hca_entities_light.parquet
+/curiosity-engine/role-backfill/entity_healthcare_role_map.sql

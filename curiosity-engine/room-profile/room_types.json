@@ -1,0 +1,90 @@
+{
+  "page": {
+    "number": 0,
+    "size": 10,
+    "totalElements": 9,
+    "totalPages": 1
+  },
+  "content": [
+    {
+      "id": "65b27d5f3dd3322df812928a",
+      "name": "Clean",
+      "roomQuantity": 553,
+      "targetOccupancy": null,
+      "stateQuantity": 1,
+      "occupancyCapacity": null,
+      "workplaceType": null,
+      "profile": "SUPPLY_STORAGE"
+    },
+    {
+      "id": "65b27d693dd3322df812928b",
+      "name": "Clinical",
+      "roomQuantity": 1465,
+      "targetOccupancy": null,
+      "stateQuantity": null,
+      "occupancyCapacity": null,
+      "workplaceType": null,
+      "profile": "PATIENT_AND_EXAM"
+    },
+    {
+      "id": "66fd7b59ebb6533cf163a87f",
+      "name": "Corridor",
+      "roomQuantity": 6,
+      "targetOccupancy": null,
+      "stateQuantity": null,
+      "occupancyCapacity": null,
+      "workplaceType": null,
+      "profile": "TRANSIT"
+    },
+    {
+      "id": "65b27d963dd3322df8129290",
+      "name": "Exit",
+      "roomQuantity": 258,
+      "targetOccupancy": null,
+      "stateQuantity": null,
+      "occupancyCapacity": null,
+      "workplaceType": null,
+      "profile": "TRANSIT"
+    },
+    {
+      "id": "65b27d723dd3322df812928c",
+      "name": "Non-Clinical",
+      "roomQuantity": 8288,
+      "targetOccupancy": null,
+      "stateQuantity": null,
+      "occupancyCapacity": null,
+      "workplaceType": null,
+      "profile": "STAFF_STATION"
+    },
+    {
+      "id": "65b27d7d3dd3322df812928d",
+      "name": "Patient",
+      "roomQuantity": 3536,
+      "targetOccupancy": null,
+      "stateQuantity": null,
+      "occupancyCapacity": null,
+      "workplaceType": null,
+      "profile": "PATIENT_AND_EXAM"
+    },
+    {
+      "id": "65b27d863dd3322df812928e",
+      "name": "Soiled",
+      "roomQuantity": 283,
+      "targetOccupancy": null,
+      "stateQuantity": null,
+      "occupancyCapacity": null,
+      "workplaceType": null,
+      "profile": "SOILED_UTILITY"
+    },
+    {
+      "id": "65b27d8e3dd3322df812928f",
+      "name": "Storage",
+      "roomQuantity": 656,
+      "targetOccupancy": null,
+      "stateQuantity": null,
+      "occupancyCapacity": null,
+      "workplaceType": null,
+      "profile": "SUPPLY_STORAGE"
+    }
+  ]
+}
