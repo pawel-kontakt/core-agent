@@ -3,9 +3,32 @@
 This is my agent context hub repository and workspace, memory and skills. Prefer this repo setup.
 Directives in this file should override repo level claude.md files.
 
+# Agent work directives
+
+## Quality & usability (overrides "done")
+- "Done" means shippable to a real person, not "matches the plan / renders / tests pass."
+- Define acceptance criteria BEFORE building, as a pass/fail checklist judged from the user's
+  seat: readability, no redundant sections, ≥ parity with the
+  thing being replaced, and any hard constraint respected. Report pass/fail per item WITH EVIDENCE.
+- Prove, don't assert: for UI/data work, paste the values shown AND the source response and
+  confirm they match. "Console clean / renders" is never acceptance.
+
+## UI/UX quality
+- Render mocked screenshot or run the app and show me the result (screenshots + named-object data) at each phase checkpoint during the design and plan writing, 
+  wait for my approval before proceeding.
+- Include one review per phase whose job is to find what's redundant, unreadable, or wrong — with
+  authority to fail the work. Propagate this bar and an explicit fail condition into every
+  subagent brief and review prompt.
+- If a constraint makes the intended UX not work, stop and say so — don't paper over it and mark
+  it done. Never report "done" for something you wouldn't ship; if it's weak, say so.
+
+## Parallel work management
+
+Prefer local branches over worktrees for work on different tasks. 
+
 # My work context
 
-I am a pod lead of a Temperature Monitoring solution. 
+I am a pod lead of a Temperature Monitoring solution and Curiosity Engine.
 My tasks are mainly designing and planning work.
 Managing a team of github users:
 
@@ -15,11 +38,11 @@ Managing a team of github users:
 | Andriy Hnezdyuk      | a.hnezdyuk@kontakt.io | hnezdyuk-kio  |
 | Krzysztof Pala       | k.pala@kontakt.io     | kpala-kio     |
 
-Claude your role: I want you to be my senior team member, exploring the code base, explaining how things works 
+Claude your role: I want you to be my senior team member, exploring the code base, explaining how things works, implementing applications and managing their config and deployment, monitoring.
 
 ## kio-apps
 
-This is my main repository, where majority of work is happening. Default location for work related to TM app features.
+This is my main repository, where majority of work is happening. Default location for work related to TM app features and original data pipelines, producing data which Curiosity Engine is later working on. 
 
 Workspace: /Users/kontakt/IdeaProjects/kio-apps
 
@@ -41,6 +64,15 @@ TM Solution dependencies
 - **Alerts Module** - component responsible for alerts processing, triggering and notifications.
     - [Alerts API](../kio-apps/api-spec/app-alerts/app-alerts-api-bundle.yaml) App alerts API. [alerts](../kio-apps/services/starlink/alerts).
 - **Data generator** - [Ramble API](../kio-apps/api-spec/ramble-api/ramble-api.yaml) - api to generated simulated data. [ramble-api](../kio-apps/services/data-generator)
+
+## tm-app-e2e
+
+Supporting tools, backoffice for the temperature monitoring solution.
+It contains e2e test framework work in progress.
+Demo data setup tool.
+Tool to investigate app support cases, reconciler scripts.
+
+Workspace: /Users/kontakt/IdeaProjects/tm-app-e2e
 
 ## compute-temperature-monitoring
 
@@ -74,6 +106,13 @@ This service also contains e2e test for the kio-cloud platform, these can serve 
 Workspace: /Users/kontakt/IdeaProjects/kio-android-apps/kio-setup-manager
 This is Android app users used to install temp monitors, its using temp monitoring api from kio-apps
 
+## kio-agents
+
+Workspace: /Users/kontakt/IdeaProjects/kio-agents
+
+Kio agentic platform, contains bootstrap scripts, API, KOIL engine implementation and runtime, used by kio agents integrated into applications.
+Curiosity Engine lives here - this is a second project I am working on. 
+
 ## infra
 
 ### Infra repository
@@ -88,3 +127,21 @@ This is apps and other resources modules re-used between envs.
 Workspace: /Users/kontakt/IdeaProjects/kio-services-infra
 This is runtime and configuration management of services deployed in k8s cluster.
 Prefer configuration of services over here, tf infra and modules should only depend on the secrets and properties unique to specific deployed env.
+
+## product team repo sandbox
+Workspace: /Users/kontakt/IdeaProjects/product-team
+This is repository owned by product managers, which contains:  
+* new products design, 
+* existing products specs
+* reports
+* experiments for the product team
+Be cautious when relaying on the content from there, look for information confirmation from the other source, but this is good source for general direction and ideas.
+
+## data-platform
+Workspace: /Users/kontakt/IdeaProjects/kio-data-platform
+This is repository with data-platform transformation jobs. Data platform is a central storage of bronze, silver and gold data. 
+Several teams contribute there, adding their transformation jobs.
+Transformation jobs are a kontakt io recommended architecture for data processing, instead of custom application code.
+Data platform delivers hosting, maintaining, governance of data and jobs.
+
+For temperature monitoring goal is to move feasible processing to the data platform, for example measurements aggregation, reporting data compilation.
